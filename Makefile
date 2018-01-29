@@ -19,20 +19,9 @@ devmarker:
 
 
 depends: clean devmarker
-	# @if test ! -d ./deps/proper; then \
-	# 	cd ./include/ta-lib/ && make \
-	# fi
-	# @if test ! -f ./include/ta-lib/Makefile; then \
-	# 	cd ./include/ta-lib/ && ./configure && make \
-	# fi
-	# @if test ! -f ./include/ta-lib/Makefile; then \
-	# 	cd ./include/ta-lib/ && make \
-	# fi
 	@if test ! -d ./priv/libta_lib.a; then \
-		cd ./include/ta-lib/configure; \
-		make -C  ./include/ta-lib/; \
+		cd ./include/ta-lib/ && configure && make && cp ./include/ta-lib/src/.libs/libta_lib.a ./priv/; \
 	fi
-	cp ./include/ta-lib/src/.libs/libta_lib.a ./priv/
 	@if test ! -d ./deps/proper; then \
 		$(REBAR) get-deps; \
 	fi
