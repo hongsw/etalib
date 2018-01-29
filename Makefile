@@ -1,4 +1,4 @@
-REBAR?=./rebar
+REBAR?=./rebar_config/rebar
 
 all: build
 
@@ -19,6 +19,7 @@ devmarker:
 
 
 depends: clean devmarker
+	# cd ./include/ta-lib/ && ./configure && make && make install &&
 	@if test ! -d ./deps/proper; then \
 		$(REBAR) get-deps; \
 	fi
