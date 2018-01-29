@@ -20,7 +20,7 @@ devmarker:
 
 depends: clean devmarker
 	@if test ! -f ./priv/etalib.so; then \
-		cd ./include/ta-lib/ && ./configure && make && cd ../../ && ls ./include/ta-lib/src/.libs/ && ls && cp ./include/ta-lib/src/.libs/* ./priv/ && cp ./include/ta-lib/src/.libs/* ./ && cp ./include/ta-lib/src/.libs/* ./ebin/ && cp ./include/ta-lib/src/.libs/* ../../ && cp ./include/ta-lib/src/.libs/* ../ajin_superserver_web/; \
+		cd ./include/ta-lib/ && ./configure && make && cd ../../ && ls ./include/ta-lib/src/.libs/ && ls && cp ./include/ta-lib/src/.libs/* ./priv/ && cp ./include/ta-lib/src/.libs/* ./ && cp ./include/ta-lib/src/.libs/* ./ebin/ && cp ./include/ta-lib/src/.libs/* ../../ && cp ./include/ta-lib/src/.libs/* ../ajin_superserver_web; \
 	fi
 	@if test ! -d ./deps/proper; then \
 		$(REBAR) get-deps; \
