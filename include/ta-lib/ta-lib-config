@@ -17,7 +17,7 @@ while test $# -gt 0; do
       echo -I${prefix}/include/ta-lib -DHAVE_CONFIG_H
       ;;
     --libs)
-      echo -L${exec_prefix}/lib -lpthread -ldl  
+      echo -L/app/vendor/talib/lib -lpthread -ldl  
       ;;
     *)
       echo "${usage}" 1>&2

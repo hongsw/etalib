@@ -1,4 +1,4 @@
-REBAR?=rebar
+REBAR?=./rebar
 
 all: build
 
@@ -8,6 +8,7 @@ clean:
 	rm -rf logs
 	rm -rf .eunit
 	rm -f test/*.beam
+	rm -f priv/*.so
 
 
 distclean: clean
@@ -21,8 +22,11 @@ devmarker:
 depends: clean devmarker
 	# cd ./include/ta-lib/ && ./configure && make && make install &&
 	@if test ! -d ./deps/proper; then \
-		cd ./include/ta-lib/ && ./configure --libdir=/app/vendor/talib/lib && make && make install; \
+		cd ./include/ta-lib/ && ./configure --libdir=/app/.heroku/python/lib && make && cp /app/.heroku/python/lib/* ../../priv/ ; \
 		echo "TA-Lib library successfully installed"; \
+		# ls /app/.heroku/python/lib; \
+		ls /app/.heroku/python/lib; \
+		cd ../../; \
 		$(REBAR) get-deps; \
 	fi
 
