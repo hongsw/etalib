@@ -1,4 +1,4 @@
-REBAR?=rebar
+REBAR?=/app/.mix/rebar3
 
 all: build
 
