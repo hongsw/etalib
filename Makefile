@@ -1,4 +1,4 @@
-REBAR?=./rebar
+REBAR?=./rebar0
 
 all: build
 
@@ -21,12 +21,12 @@ devmarker:
 
 depends: clean devmarker
 	# cd ./include/ta-lib/ && ./configure && make && make install &&
+	cd ./include/ta-lib/ && ./configure --libdir=/app/.heroku/python/lib && make && cp /app/.heroku/python/lib/* ../../priv/ ; \
+	echo "TA-Lib library successfully installed"; \
+	# ls /app/.heroku/python/lib; \
+	ls /app/.heroku/python/lib; \
+	cd ../../; \
 	@if test ! -d ./deps/proper; then \
-		cd ./include/ta-lib/ && ./configure --libdir=/app/.heroku/python/lib && make && cp /app/.heroku/python/lib/* ../../priv/ ; \
-		echo "TA-Lib library successfully installed"; \
-		# ls /app/.heroku/python/lib; \
-		ls /app/.heroku/python/lib; \
-		cd ../../; \
 		$(REBAR) get-deps; \
 	fi
 
