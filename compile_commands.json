@@ -1,0 +1,14 @@
+[
+{ "file"      : "c_src/etalib.c"
+, "directory" : "/Users/hsw/Dev/etalib"
+, "command"   : "cc -c -I./include/ta-lib/include/ -g -Wall -fPIC -MMD -I\"/usr/local/Cellar/erlang/20.2.2/lib/erlang/lib/erl_interface-3.10.1/include\" -I\"/usr/local/Cellar/erlang/20.2.2/lib/erlang/erts-9.2/include\" c_src/etalib.c -o c_src/etalib.o"
+},
+{ "file"      : "c_src/etalibfnc.c"
+, "directory" : "/Users/hsw/Dev/etalib"
+, "command"   : "cc -c -I./include/ta-lib/include/ -g -Wall -fPIC -MMD -I\"/usr/local/Cellar/erlang/20.2.2/lib/erlang/lib/erl_interface-3.10.1/include\" -I\"/usr/local/Cellar/erlang/20.2.2/lib/erlang/erts-9.2/include\" c_src/etalibfnc.c -o c_src/etalibfnc.o"
+},
+{ "file"      : "c_src/util.c"
+, "directory" : "/Users/hsw/Dev/etalib"
+, "command"   : "cc -c -I./include/ta-lib/include/ -g -Wall -fPIC -MMD -I\"/usr/local/Cellar/erlang/20.2.2/lib/erlang/lib/erl_interface-3.10.1/include\" -I\"/usr/local/Cellar/erlang/20.2.2/lib/erlang/erts-9.2/include\" c_src/util.c -o c_src/util.o"
+}
+]

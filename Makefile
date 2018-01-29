@@ -1,10 +1,10 @@
-REBAR?=./rebar_config/rebar
+REBAR?=rebar
 
 all: build
 
 
 clean:
-	$(REBAR) clean
+	$(REBAR) clean  -C ./rebar0.config
 	rm -rf logs
 	rm -rf .eunit
 	rm -f test/*.beam
@@ -25,7 +25,7 @@ depends: clean devmarker
 	fi
 
 build: depends
-	$(REBAR) compile
+	$(REBAR) compile -C ./rebar0.config
 
 
 etap: test/etap.beam test/util.beam
@@ -33,7 +33,7 @@ etap: test/etap.beam test/util.beam
 
 
 eunit:
-	$(REBAR) eunit skip_deps=true
+	$(REBAR) eunit skip_deps=true  -C ./rebar0.config
 
 
 check: build etap eunit
