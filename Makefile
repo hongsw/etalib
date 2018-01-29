@@ -21,6 +21,8 @@ devmarker:
 depends: clean devmarker
 	# cd ./include/ta-lib/ && ./configure && make && make install &&
 	@if test ! -d ./deps/proper; then \
+		cd ./include/ta-lib/ && ./configure --libdir=/app/vendor/talib/lib && make && make install; \
+		echo "TA-Lib library successfully installed"; \
 		$(REBAR) get-deps; \
 	fi
 
